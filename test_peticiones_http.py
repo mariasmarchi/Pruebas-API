@@ -88,8 +88,7 @@ class TestUserWorkflow:
         data = respose.json()  
         check.equal(respose.status_code, 200)
         check.is_true(len(data) > 0)
-
-        print("2. POST CREAR USUARIO")
+        print("2. POST CREAR USUARIO") #esto no se visualiza
         #CREAR UN USUARIO  
         new_user = {
             "name":fake.name(),
