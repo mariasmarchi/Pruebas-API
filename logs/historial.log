@@ -77,3 +77,35 @@
 20:19:24 [INFO] Content-Type: application/json; charset=utf-8
 20:19:24 [INFO] Body preview: {}
 20:19:24 [ERROR] Test 'test_peticiones_http.py::TestUserFailures::test_usuario_inexistente' FAILED en 0.66s
+20:23:37 [INFO] Inicializando fixture api_url para el test: test_get_response_code
+20:23:38 [INFO] Status recibido: 200
+20:23:38 [INFO] Header Content-Type: application/json; charset=utf-8
+20:23:38 [INFO] Body preview: [
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwen
+20:23:38 [INFO] Test 'test_peticiones_http.py::TestGetUser::test_get_response_code' PASSED en 0.50s
+20:23:38 [INFO] Inicializando fixture api_url para el test: test_get_response_data
+20:23:38 [INFO] Test 'test_peticiones_http.py::TestGetUser::test_get_response_data' PASSED en 0.38s
+20:23:38 [INFO] Inicializando fixture api_url para el test: test_post_response_code
+20:23:39 [INFO] Usuario creado: {'name': 'Benjamin Garner', 'email': 'zacharyboyle@example.com', 'phone': '4232836888', 'id': 11}
+20:23:39 [INFO] Test 'test_peticiones_http.py::TestPostUser::test_post_response_code' PASSED en 0.56s
+20:23:39 [INFO] Inicializando fixture api_url para el test: test_completo_users
+20:23:39 [INFO] === INICIO DEL WORKFLOW DE USUARIOS ===
+20:23:39 [INFO] Usuarios obtenidos: 10
+20:23:40 [INFO] Usuario creado con ID: 11
+20:23:41 [INFO] Usuario actualizado: {'phone': '+1-925-632-8930'}
+20:23:42 [INFO] DELETE status: 200
+20:23:42 [INFO] === FIN DEL WORKFLOW DE USUARIOS ===
+20:23:42 [INFO] Test 'test_peticiones_http.py::TestUserWorkflow::test_completo_users' PASSED en 3.06s
+20:23:42 [INFO] Inicializando fixture api_url para el test: test_usuario_inexistente
+20:23:42 [INFO] Intentando obtener usuario inexistente ID=99999
+20:23:43 [INFO] Content-Type: application/json; charset=utf-8
+20:23:43 [INFO] Body preview: {}
+20:23:43 [ERROR] Test 'test_peticiones_http.py::TestUserFailures::test_usuario_inexistente' FAILED en 0.64s

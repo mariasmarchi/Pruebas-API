@@ -1,1 +1,47 @@
 # Pruebas-API
+
+# Pruebas-API
+
+## Propósito del proyecto
+Este proyecto tiene como objetivo practicar y demostrar pruebas automatizadas sobre una API pública (`jsonplaceholder.typicode.com`).  
+Se implementa un flujo completo de testing que incluye operaciones **GET, POST, PATCH y DELETE**, validaciones de respuesta, logging detallado y generación de reportes HTML con evidencia visual (capturas de pantalla en fallos).
+
+---
+
+##  Tecnologías utilizadas
+- **Python**
+- **Pytest** – framework de testing
+- **Pytest-HTML** – generación de reportes HTML
+- **Pytest-Check** – validaciones que no interrumpen la ejecución
+- **Faker** – generación de datos aleatorios para pruebas
+- **Requests** – librería para consumir APIs
+- **Selenium (opcional)** – para capturas de pantalla en pruebas fallidas
+- **Logging (módulo estándar de Python)** – registro detallado de la ejecución
+
+---
+
+## Estructura del proyecto
+Pruebas-API/ 
+│ 
+├── test_peticiones_http.py # Archivo principal con las pruebas de API 
+├── conftest.py # Configuración de fixtures, logging y hooks 
+├── pytest.ini # Configuración de pytest y reportes HTML 
+├── reports/ # Carpeta de reportes HTML y capturas 
+└── logs/ # Carpeta de logs de ejecución
+
+
+
+---
+
+## Instalación de dependencias
+Cloná el repositorio y luego instalá las dependencias necesarias:
+
+```bash
+git clone https://github.com/mariasmarchi/Pruebas-API.git
+cd Pruebas-API
+pip install -r requirements.txt
+
+
+
+## Ejecucion de pruebas
+pytest
