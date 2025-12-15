@@ -1,5 +1,6 @@
 import requests
 import pytest
+import pytest_check as check
 from faker import Faker
 from datetime import datetime
 
@@ -54,6 +55,7 @@ class TestGetUser:
 
 class TestPostUser:
 
+
     @pytest.mark.post
     def test_post_response_code(self, api_url):
         new_user = {
@@ -73,5 +75,28 @@ class TestPostUser:
         if "createdAt" in data:
             created_at = data["createdAt"]
             current_year = datetime.now().year
-            assert str(current_year) in created_at, f"no esra en el año actual"
+            assert str(current_year) in created_at, f"no esta en el año actual"
            
+
+class TestUserWorkflow:
+
+    def test_completo_users(self, api_url):
+        print("TESTS ENCANDENADOS: GET, POST, GET, PATCH, DELETE")
+        print("1. GET OBTENER USUARIOS")
+        #GET:OBTENER LOS USUARIOS
+        respose = requests.get(api_url + "users")
+        data = respose.json()  
+        check.equal(respose.status_code, 200)
+        check.is_true(len(data) > 0)
+
+        print("2. POST CREAR USUARIO")
+        #CREAR UN USUARIO  
+        new_user = {
+            "name":fake.name(),
+            "email" : fake.email(),
+            "phone": fake.phone_number()
+            #"createdAt": fake.date_time_this_year()
+        }
+
+        response = requests.post(api_url + "users", new_user)
+        assert response.status_code == 201
