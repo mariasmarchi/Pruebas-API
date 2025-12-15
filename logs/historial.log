@@ -1,4 +1,20 @@
-16:40:17 INFO root – Fixture api_url inicializado
-16:40:18 INFO root – Fixture api_url inicializado
-16:40:18 INFO root – Fixture api_url inicializado
-16:40:19 INFO root – Fixture api_url inicializado
+19:49:32 [INFO] Inicializando fixture api_url
+19:49:33 [INFO] Inicializando fixture api_url
+19:49:33 [INFO] Inicializando fixture api_url
+19:49:34 [INFO] Inicializando fixture api_url
+19:49:38 [INFO] Inicializando fixture api_url
+19:52:30 [INFO] Inicializando fixture api_url para el test: test_get_response_code
+19:52:31 [INFO] Inicializando fixture api_url para el test: test_get_response_data
+19:52:31 [INFO] Inicializando fixture api_url para el test: test_post_response_code
+19:52:32 [INFO] Inicializando fixture api_url para el test: test_completo_users
+19:52:36 [INFO] Inicializando fixture api_url para el test: test_usuario_inexistente
+19:57:48 [INFO] Inicializando fixture api_url para el test: test_get_response_code
+19:57:50 [ERROR] Test 'test_peticiones_http.py::TestGetUser::test_get_response_code' FAILED en 0.56s
+19:57:50 [INFO] Inicializando fixture api_url para el test: test_get_response_data
+19:57:50 [INFO] Test 'test_peticiones_http.py::TestGetUser::test_get_response_data' PASSED en 0.49s
+19:57:50 [INFO] Inicializando fixture api_url para el test: test_post_response_code
+19:57:51 [INFO] Test 'test_peticiones_http.py::TestPostUser::test_post_response_code' PASSED en 0.68s
+19:57:51 [INFO] Inicializando fixture api_url para el test: test_completo_users
+19:57:54 [INFO] Test 'test_peticiones_http.py::TestUserWorkflow::test_completo_users' PASSED en 3.42s
+19:57:54 [INFO] Inicializando fixture api_url para el test: test_usuario_inexistente
+19:57:55 [ERROR] Test 'test_peticiones_http.py::TestUserFailures::test_usuario_inexistente' FAILED en 0.41s

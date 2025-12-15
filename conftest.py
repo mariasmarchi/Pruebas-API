@@ -5,6 +5,28 @@ import time
 from selenium import webdriver
 from pytest_html import extras
 
+# Carpeta de reportes
+path_dir = pathlib.Path("reports")
+path_dir.mkdir(exist_ok=True)
+
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    # Ejecuta el test
+    outcome = yield
+    rep = outcome.get_result()
+
+    # Solo si falla en la fase de ejecución
+    if rep.when == "call" and rep.failed:
+        driver = item.funcargs.get("driver", None)
+        if driver:
+            screenshot_path = path_dir / f"{item.name}.png"
+            driver.save_screenshot(str(screenshot_path))
+            # Adjuntar al reporte HTML
+            if "pytest_html" in item.config.pluginmanager.plugins:
+                extra = getattr(rep, "extra", [])
+                from pytest_html import extras
+                extra.append(extras.image(str(screenshot_path)))
+                rep.extra = extra
 
 
 @pytest.fixture
@@ -28,15 +50,35 @@ def pytest_html_report_title(report):
 path_dir = pathlib.Path('logs')
 path_dir.mkdir(exist_ok=True)
 
+# Carpeta de logs
+path_dir = pathlib.Path("logs")
+path_dir.mkdir(exist_ok=True)
 
 logging.basicConfig(
-    filename= path_dir/ "historial.log",
-    level= logging.INFO,
-    format='%(asctime)s %(levelname)s %(name)s – %(message)s',
-    datefmt='%H:%M:%S'
+    filename=path_dir / "historial.log",
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%H:%M:%S"
 )
 
-logger = logging.getLogger()
+logger = logging.getLogger(__name__)
+
+@pytest.fixture
+def api_url(request):
+    logger.info(f"Inicializando fixture api_url para el test: {request.node.name}")
+    return "https://jsonplaceholder.typicode.com/"
+
+# Hook para registrar resultado de cada test sin íconos
+def pytest_runtest_logreport(report):
+    if report.when == "call":  # solo en ejecución
+        if report.passed:
+            logger.info(f"Test '{report.nodeid}' PASSED en {report.duration:.2f}s")
+        elif report.failed:
+            logger.error(f"Test '{report.nodeid}' FAILED en {report.duration:.2f}s")
+        elif report.skipped:
+            logger.warning(f"Test '{report.nodeid}' SKIPPED")
+
+
 
 #@pytest.fixture
 #def api_url():
