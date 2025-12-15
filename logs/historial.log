@@ -18,3 +18,62 @@
 19:57:54 [INFO] Test 'test_peticiones_http.py::TestUserWorkflow::test_completo_users' PASSED en 3.42s
 19:57:54 [INFO] Inicializando fixture api_url para el test: test_usuario_inexistente
 19:57:55 [ERROR] Test 'test_peticiones_http.py::TestUserFailures::test_usuario_inexistente' FAILED en 0.41s
+20:15:29 [INFO] Inicializando fixture api_url para el test: test_get_response_code
+20:15:30 [INFO] Status recibido: 200
+20:15:30 [INFO] Header Content-Type: application/json; charset=utf-8
+20:15:30 [INFO] Body preview: [
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwen
+20:15:30 [INFO] Test 'test_peticiones_http.py::TestGetUser::test_get_response_code' PASSED en 0.55s
+20:15:30 [INFO] Inicializando fixture api_url para el test: test_get_response_data
+20:15:30 [INFO] Test 'test_peticiones_http.py::TestGetUser::test_get_response_data' PASSED en 0.39s
+20:15:30 [INFO] Inicializando fixture api_url para el test: test_post_response_code
+20:15:31 [INFO] Usuario creado: {'name': 'Jeffrey Schwartz', 'email': 'drewlopez@example.com', 'phone': '501.269.9812', 'id': 11}
+20:15:31 [INFO] Test 'test_peticiones_http.py::TestPostUser::test_post_response_code' PASSED en 0.73s
+20:15:31 [INFO] Inicializando fixture api_url para el test: test_completo_users
+20:15:31 [INFO] === INICIO DEL WORKFLOW DE USUARIOS ===
+20:15:31 [INFO] Usuarios obtenidos: 10
+20:15:32 [INFO] Usuario creado con ID: 11
+20:15:33 [INFO] Usuario actualizado: {'phone': '+1-806-859-7267x9980'}
+20:15:34 [INFO] DELETE status: 200
+20:15:34 [INFO] === FIN DEL WORKFLOW DE USUARIOS ===
+20:15:34 [INFO] Test 'test_peticiones_http.py::TestUserWorkflow::test_completo_users' PASSED en 3.17s
+20:19:19 [INFO] Inicializando fixture api_url para el test: test_get_response_code
+20:19:19 [INFO] Status recibido: 200
+20:19:19 [INFO] Header Content-Type: application/json; charset=utf-8
+20:19:19 [INFO] Body preview: [
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwen
+20:19:19 [INFO] Test 'test_peticiones_http.py::TestGetUser::test_get_response_code' PASSED en 0.51s
+20:19:19 [INFO] Inicializando fixture api_url para el test: test_get_response_data
+20:19:20 [INFO] Test 'test_peticiones_http.py::TestGetUser::test_get_response_data' PASSED en 0.45s
+20:19:20 [INFO] Inicializando fixture api_url para el test: test_post_response_code
+20:19:20 [INFO] Usuario creado: {'name': 'Jamie Morgan', 'email': 'bryancook@example.com', 'phone': '376.375.9696x58720', 'id': 11}
+20:19:20 [INFO] Test 'test_peticiones_http.py::TestPostUser::test_post_response_code' PASSED en 0.65s
+20:19:20 [INFO] Inicializando fixture api_url para el test: test_completo_users
+20:19:20 [INFO] === INICIO DEL WORKFLOW DE USUARIOS ===
+20:19:21 [INFO] Usuarios obtenidos: 10
+20:19:21 [INFO] Usuario creado con ID: 11
+20:19:23 [INFO] Usuario actualizado: {'phone': '(569)287-1075x3622'}
+20:19:23 [INFO] DELETE status: 200
+20:19:23 [INFO] === FIN DEL WORKFLOW DE USUARIOS ===
+20:19:23 [INFO] Test 'test_peticiones_http.py::TestUserWorkflow::test_completo_users' PASSED en 2.86s
+20:19:23 [INFO] Inicializando fixture api_url para el test: test_usuario_inexistente
+20:19:23 [INFO] Intentando obtener usuario inexistente ID=99999
+20:19:24 [INFO] Content-Type: application/json; charset=utf-8
+20:19:24 [INFO] Body preview: {}
+20:19:24 [ERROR] Test 'test_peticiones_http.py::TestUserFailures::test_usuario_inexistente' FAILED en 0.66s
